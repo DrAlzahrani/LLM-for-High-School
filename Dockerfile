@@ -21,6 +21,7 @@ RUN pip install  --upgrade pip && pip install jupyter ipykernel pymilvus[model] 
 #COPY Long_lab.ipynb /app/
 #COPY Short_lab.ipynb /app/
 #COPY chatbot-flowchart.png /app/
+COPY LLM_Rag.ipynb /app/
 
 # Expose Jupyter Notebook port
 EXPOSE 8888
