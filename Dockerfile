@@ -18,9 +18,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN pip install  --upgrade pip && pip install jupyter ipykernel pymilvus[model] python-dotenv langchain langchain_community langchain-core langchain_huggingface langchain_milvus langchain-groq beautifulsoup4 requests nltk sentence-transformers
 
 # Copy the Jupyter notebooks into the container
-COPY Long_lab.ipynb /app/
-COPY Short_lab.ipynb /app/
-COPY chatbot-flowchart.png /app/
+#COPY Long_lab.ipynb /app/
+#COPY Short_lab.ipynb /app/
+#COPY chatbot-flowchart.png /app/
 
 # Expose Jupyter Notebook port
 EXPOSE 8888
