@@ -2,18 +2,6 @@
 
 The **Academic Advisor Chatbot** project is an AI-driven chatbot designed to help students navigate academic queries related to the Computer Science and Engineering (CSE) department. The chatbot can answer questions about course prerequisites, academic schedules, department policies, and more.
 
-
-## **Table of Contents**
-
-To set up the project on your local machine, follow the steps below:
-
-* [Prerequisites](#prerequisites)
-* [Installation](#installation)
-* [Accessing the Application](#accessing-the-application)
-* [Software Quality Assurance](#software-quality-assurance)
-* [Troubleshooting](#troubleshooting)
-* [Contributors](#contributors)
-
 ---
 ## Prerequisites
 
