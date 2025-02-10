@@ -1,4 +1,4 @@
-# Academic Advisor Chatbot 
+# LLM RAG Chatbot  
 
 The **Academic Advisor Chatbot** project is an AI-driven chatbot designed to help students navigate academic queries related to the Computer Science and Engineering (CSE) department. The chatbot can answer questions about course prerequisites, academic schedules, department policies, and more.
 
