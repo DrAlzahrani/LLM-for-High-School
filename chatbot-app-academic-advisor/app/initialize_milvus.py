@@ -1,3 +1,4 @@
+from read_xls import process_xls_files
 from constants import *
 from pymilvus import connections, utility, Collection, CollectionSchema, FieldSchema, DataType
 from sentence_transformers import SentenceTransformer
@@ -7,7 +8,7 @@ from web_crawler import merged_data
 
 nltk.download('punkt')
 
-def initialize_milvus(data, milvus_uri=MILVUS_URI):
+def initialize_milvus(data, XL_data, milvus_uri=MILVUS_URI):
     """Initialize Milvus, create collection, and insert data from content and internal links."""
     print("Initializing Milvus and creating a collection...")
 
@@ -62,9 +63,10 @@ def initialize_milvus(data, milvus_uri=MILVUS_URI):
     results = []
     for item in data:
         process_entry(item, results)
-
-    # Debugging: Check results
-    print(f"Results Count: {len(results)}")
+    results.extend(XL_data)
+    
+    # Debug: Show total number of entries from both sources
+    print(f"Total entries (web + XLS): {len(results)}")
     if not results:
         print("No data to insert. Please check the input data.")
         return
@@ -104,6 +106,10 @@ def initialize_milvus(data, milvus_uri=MILVUS_URI):
 
 
 def initialize_milvus_insert_data():
+    # web data
     KB = merged_data()
     print("Input Data Sample:", KB[:3])
-    return initialize_milvus(KB)
+    # xlsx data
+    KB_xls = process_xls_files(xls_files)
+    print("Excel Data Sample:", KB_xls[:3])
+    return initialize_milvus(KB, KB_xls)
